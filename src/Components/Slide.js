@@ -19,26 +19,28 @@ class Slide extends Component {
     }
     render(){
         return(
-            <div className="Slide">
-                <div className="slide-number">
-                    {data[this.state.index].id}/25
-                </div>
-                <div className="name">
-                    {`${data[this.state.index].name.first} ${data[this.state.index].name.last}`}
-                </div>
-                <div className="hometown">
-                    From: {`${data[this.state.index].city}, ${data[this.state.index].country}`}
-                </div>
-                <div className="employer">
-                    Employer: {data[this.state.index].employer}
-                </div>
-                <div className="favoriteMovies">
-                    Favorite Movies:
-                    <ol>
-                        <li>{data[this.state.index].favoriteMovies[0]}</li>
-                        <li>{data[this.state.index].favoriteMovies[1]}</li>
-                        <li>{data[this.state.index].favoriteMovies[2]}</li>
-                    </ol>
+            <div className="slide-with-nav">
+                <div className="slide">
+                    <div className="slide-number">
+                        {data[this.state.index].id}/{data.length}
+                    </div>
+                    <div className="name">
+                        {`${data[this.state.index].name.first} ${data[this.state.index].name.last}`}
+                    </div>
+                    <div className="hometown">
+                    <div className="info-type">From:&nbsp;</div>{`${data[this.state.index].city}, ${data[this.state.index].country}`}
+                    </div>
+                    <div className="employer">
+                    <div className="info-type">Employer:&nbsp;</div> {data[this.state.index].employer}
+                    </div>
+                    <div className="favorite-movies">
+                    <div className="info-type">Favorite Movies:</div>
+                        <ol>
+                            <li>{data[this.state.index].favoriteMovies[0]}</li>
+                            <li>{data[this.state.index].favoriteMovies[1]}</li>
+                            <li>{data[this.state.index].favoriteMovies[2]}</li>
+                        </ol>
+                    </div>
                 </div>
                 <nav className="nav">
                     <button className="white-buttons" onClick={() => {this.handlePrevious()}}>&lt; Previous</button>
